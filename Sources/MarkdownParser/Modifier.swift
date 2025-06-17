@@ -9,8 +9,8 @@ import Foundation
 import Plot
 import Markdown
 
-public struct Modifier {
-    public typealias Closure = (
+public struct Modifier: Sendable {
+    public typealias Closure = @Sendable (
         Node<HTML.BodyContext>,
         inout MarkdownDocument,
         Markup
@@ -29,10 +29,11 @@ public struct Modifier {
 }
 
 public extension Modifier {
-    enum Target: Hashable {
+    enum Target: Hashable, Sendable {
         case blockQuote
         case codeBlock
         case document
+        case title
         case heading
         case thematicBreak
         case htmlBlock
@@ -55,7 +56,7 @@ public extension Modifier {
     }
 }
 
-internal struct ModifierCollection {
+internal struct ModifierCollection: Sendable {
     private var modifiers: [Modifier.Target : [Modifier]]
 
     init(modifiers: [Modifier]) {

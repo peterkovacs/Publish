@@ -4,27 +4,32 @@
 *  MIT license, see LICENSE file for details
 */
 
-import XCTest
+import Testing
 import Publish
+import Synchronization
 
-final class ModifierTests: XCTestCase {
-    func testModifierInput() {
-        var allHTML = [String]()
-        var allMarkdown = [String]()
+@Suite("Modifier", .serialized) struct ModifierTests {
+    @Test func testModifierInput() {
+        let state = Mutex<(allHTML: [String], allMarkdown: [String])>(([], []))
         var parser = MarkdownParser()
+
         parser.addModifier(for: .paragraph) { html, _, markup in
-            allHTML.append(html.render())
-            allMarkdown.append(markup.format())
+            state.withLock {
+                $0.allHTML.append(html.render())
+                $0.allMarkdown.append(markup.format())
+            }
             return html
         }
 
         let html = parser.html(from: "One\n\nTwo\n\nThree")
-        XCTAssertEqual(html, "<p>One</p><p>Two</p><p>Three</p>")
-        XCTAssertEqual(allHTML, ["<p>One</p>", "<p>Two</p>", "<p>Three</p>"])
-        XCTAssertEqual(allMarkdown, ["One", "\n\nTwo", "\n\nThree"])
+        #expect(html == "<p>One</p><p>Two</p><p>Three</p>")
+        let allHtml = state.withLock(\.allHTML)
+        let allMarkdown = state.withLock(\.allMarkdown)
+        #expect(allHtml == ["<p>One</p>", "<p>Two</p>", "<p>Three</p>"])
+        #expect(allMarkdown == ["One", "\n\nTwo", "\n\nThree"])
     }
 
-    func testAddingModifiers() {
+    @Test func testAddingModifiers() {
         var parser = MarkdownParser()
         parser.addModifier(for: .heading) { _, _, _ in
             return .h1(.text("New heading"))
@@ -45,12 +50,12 @@ final class ModifierTests: XCTestCase {
         Text [Link](url) `code`
         """)
 
-        XCTAssertEqual(html, #"""
+        #expect(html == #"""
         <h1>New heading</h1><p>Text LINK:<a href="url">Link</a> Code</p>
         """#)
     }
 
-    func testMultipleModifiersForSameTarget() {
+    @Test func testMultipleModifiersForSameTarget() {
         var parser = MarkdownParser()
 
         parser.addModifier(for: .codeBlock) { html, _, _ in
@@ -67,6 +72,6 @@ final class ModifierTests: XCTestCase {
         ```
         """)
 
-        XCTAssertEqual(html, "<section><div><pre><code>Code\n</code></pre></div></section>")
+        #expect(html == "<section><div><pre><code>Code\n</code></pre></div></section>")
     }
 }

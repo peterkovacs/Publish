@@ -2,7 +2,7 @@ import Foundation
 import Markdown
 import Parsing
 
-public struct MarkdownParser {
+public struct MarkdownParser: Sendable {
     private var modifiers: ModifierCollection
 
     public init() {
@@ -43,8 +43,8 @@ public struct MarkdownParser {
     }
 
     private var identifier: some Parser<Substring, String> {
-        Parse {
-            "\($0)\($1)"
+        Parse { (first: Substring, rest: Substring) in
+            "\(first)\(rest)"
         } with: {
             CharacterSet.letters
             Prefix {

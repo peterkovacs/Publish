@@ -1,106 +1,114 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Codextended",
-        "repositoryURL": "https://github.com/johnsundell/codextended.git",
-        "state": {
-          "branch": null,
-          "revision": "8d7c46dfc9c55240870cf5561d6cefa41e3d7105",
-          "version": "0.3.0"
-        }
-      },
-      {
-        "package": "CollectionConcurrencyKit",
-        "repositoryURL": "https://github.com/johnsundell/collectionConcurrencyKit.git",
-        "state": {
-          "branch": null,
-          "revision": "2e4984dcaed6432f4eff175f6616ba463428cd8a",
-          "version": "0.1.0"
-        }
-      },
-      {
-        "package": "Files",
-        "repositoryURL": "https://github.com/johnsundell/files.git",
-        "state": {
-          "branch": null,
-          "revision": "d273b5b7025d386feef79ef6bad7de762e106eaf",
-          "version": "4.2.0"
-        }
-      },
-      {
-        "package": "Plot",
-        "repositoryURL": "https://github.com/johnsundell/plot.git",
-        "state": {
-          "branch": null,
-          "revision": "80612b34252188edbef280e5375e2fc5249ac770",
-          "version": "0.9.0"
-        }
-      },
-      {
-        "package": "ShellOut",
-        "repositoryURL": "https://github.com/johnsundell/shellout.git",
-        "state": {
-          "branch": null,
-          "revision": "e1577acf2b6e90086d01a6d5e2b8efdaae033568",
-          "version": "2.3.0"
-        }
-      },
-      {
-        "package": "Sweep",
-        "repositoryURL": "https://github.com/johnsundell/sweep.git",
-        "state": {
-          "branch": null,
-          "revision": "801c2878e4c6c5baf32fe132e1f3f3af6f9fd1b0",
-          "version": "0.4.0"
-        }
-      },
-      {
-        "package": "swift-case-paths",
-        "repositoryURL": "https://github.com/pointfreeco/swift-case-paths",
-        "state": {
-          "branch": null,
-          "revision": "fc45e7b2cfece9dd80b5a45e6469ffe67fe67984",
-          "version": "0.14.1"
-        }
-      },
-      {
-        "package": "cmark-gfm",
-        "repositoryURL": "https://github.com/apple/swift-cmark.git",
-        "state": {
-          "branch": "gfm",
-          "revision": "b1c49eb0752d727fda5dfa63c8bb23670592d7c9",
-          "version": null
-        }
-      },
-      {
-        "package": "swift-markdown",
-        "repositoryURL": "https://github.com/apple/swift-markdown.git",
-        "state": {
-          "branch": "main",
-          "revision": "cb80ea4151e5860a3b344d46e14cbcb52c5daeb3",
-          "version": null
-        }
-      },
-      {
-        "package": "swift-parsing",
-        "repositoryURL": "https://github.com/pointfreeco/swift-parsing.git",
-        "state": {
-          "branch": null,
-          "revision": "27c941bbd22a4bbc53005a15a0440443fd892f70",
-          "version": "0.12.1"
-        }
-      },
-      {
-        "package": "xctest-dynamic-overlay",
-        "repositoryURL": "https://github.com/pointfreeco/xctest-dynamic-overlay",
-        "state": {
-          "branch": null,
-          "revision": "4af50b38daf0037cfbab15514a241224c3f62f98",
-          "version": "0.8.5"
-        }
+  "originHash" : "0539999f43653c280a3d1c355db9d6abf126799db442948213de4f018b312b46",
+  "pins" : [
+    {
+      "identity" : "codextended",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnsundell/codextended.git",
+      "state" : {
+        "revision" : "8d7c46dfc9c55240870cf5561d6cefa41e3d7105",
+        "version" : "0.3.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "collectionconcurrencykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnsundell/collectionConcurrencyKit.git",
+      "state" : {
+        "revision" : "b4f23e24b5a1bff301efc5e70871083ca029ff95",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "files",
+      "kind" : "localSourceControl",
+      "location" : "/Users/peter/Developer/Personal/Files",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5f20560292f1d683e799dc201130b775668fa2c7"
+      }
+    },
+    {
+      "identity" : "plot",
+      "kind" : "localSourceControl",
+      "location" : "/Users/peter/Developer/Personal/Plot",
+      "state" : {
+        "branch" : "swift-6",
+        "revision" : "4084e7fe07cfd312824548969ec86ff5d1d03236"
+      }
+    },
+    {
+      "identity" : "shellout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnsundell/shellout.git",
+      "state" : {
+        "revision" : "e1577acf2b6e90086d01a6d5e2b8efdaae033568",
+        "version" : "2.3.0"
+      }
+    },
+    {
+      "identity" : "sweep",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnsundell/sweep.git",
+      "state" : {
+        "revision" : "801c2878e4c6c5baf32fe132e1f3f3af6f9fd1b0",
+        "version" : "0.4.0"
+      }
+    },
+    {
+      "identity" : "swift-case-paths",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-case-paths",
+      "state" : {
+        "revision" : "41b89b8b68d8c56c622dbb7132258f1a3e638b25",
+        "version" : "1.7.0"
+      }
+    },
+    {
+      "identity" : "swift-cmark",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-cmark.git",
+      "state" : {
+        "revision" : "b022b08312decdc46585e0b3440d97f6f22ef703",
+        "version" : "0.6.0"
+      }
+    },
+    {
+      "identity" : "swift-markdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-markdown.git",
+      "state" : {
+        "revision" : "ea79e83c8744d2b50b0dc2d5bbd1e857e1253bf9",
+        "version" : "0.6.0"
+      }
+    },
+    {
+      "identity" : "swift-parsing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-parsing.git",
+      "state" : {
+        "revision" : "3432cb81164dd3d69a75d0d63205be5fbae2c34b",
+        "version" : "0.14.1"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax",
+      "state" : {
+        "revision" : "f99ae8aa18f0cf0d53481901f88a0991dc3bd4a2",
+        "version" : "601.0.1"
+      }
+    },
+    {
+      "identity" : "xctest-dynamic-overlay",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
+      "state" : {
+        "revision" : "39de59b2d47f7ef3ca88a039dff3084688fe27f4",
+        "version" : "1.5.2"
+      }
+    }
+  ],
+  "version" : 3
 }

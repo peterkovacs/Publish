@@ -8,7 +8,7 @@ import Foundation
 import Plot
 
 /// Type representing a location's main content.
-public struct Content: Hashable, ContentProtocol {
+public struct Content: ContentProtocol, Hashable, Sendable {
     public var title: String
     public var description: String
     public var body: Body

@@ -98,10 +98,6 @@ extension Visitor {
     }
 
     public mutating func visitHeading(_ heading: Heading) -> Node<HTML.BodyContext> {
-        if heading.level == 1, self.document.title == nil {
-            self.document.title = heading.plainText
-        }
-
         var html = Result.element(named: "h\(heading.level)", children: heading.children, visitor: &self)
 
         modifiers.applyModifiers(for: .heading) {
@@ -110,6 +106,18 @@ extension Visitor {
                 &document,
                 heading
             )
+        }
+
+        if heading.level == 1, self.document.title == nil {
+            self.document.title = heading.plainText
+
+            modifiers.applyModifiers(for: .title) {
+                html = $0.closure(
+                    html,
+                    &document,
+                    heading
+                )
+            }
         }
 
         return html
@@ -200,7 +208,7 @@ extension Visitor {
 
     public mutating func visitParagraph(_ paragraph: Markdown.Paragraph) -> Node<HTML.BodyContext> {
         var html: Result
-        if let parent = paragraph.parent as? Markdown.ListItem {
+        if paragraph.parent is Markdown.ListItem {
             html = Result.group(paragraph.children.map { $0.accept(&self) })
         } else {
             html = Result.element(named: "p", children: paragraph.children, visitor: &self)
@@ -271,8 +279,8 @@ extension Visitor {
                 Rest()
             }
 
-            Parse {
-                ImageSource.path("\($0)")
+            Parse { (path: Substring) -> ImageSource in
+                ImageSource.path("\(path)")
             } with: {
                 Rest()
             }
