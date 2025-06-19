@@ -43,6 +43,7 @@ let package = Package(
         ),
         .package(url: "https://github.com/swiftlang/swift-markdown.git", from: "0.6.0"),
         .package(url: "https://github.com/pointfreeco/swift-parsing.git", from: "0.12.0"),
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.83.0"),
     ],
     targets: [
         .target(
@@ -54,6 +55,9 @@ let package = Package(
                 .product(name: "ShellOut", package: "shellout"),
                 .product(name: "Sweep", package: "sweep"),
                 .product(name: "CollectionConcurrencyKit", package: "collectionConcurrencyKit"),
+                .product(name: "NIO", package: "swift-nio"),
+                .product(name: "NIOHTTP1", package: "swift-nio"),
+                .product(name: "_NIOFileSystem", package: "swift-nio"),
                 "MarkdownParser",
             ]
         ),
