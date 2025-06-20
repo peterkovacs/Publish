@@ -18,11 +18,11 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "../Plot",
+            url: "https://github.com/peterkovacs/plot",
             branch: "swift-6"
         ),
         .package(
-            url: "../Files",
+            url: "https://github.com/peterkovacs/files",
             branch: "master"
         ),
         .package(

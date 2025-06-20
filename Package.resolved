@@ -1,5 +1,5 @@
 {
-  "originHash" : "e31156101c56e8e38f6a7841aa7461c5d3bacad20583a1c46318c1ab5135ccd5",
+  "originHash" : "06c840015557163f70247b520568a7a9b5809bce51dcb50e7600683ec69a0986",
   "pins" : [
     {
       "identity" : "codextended",
@@ -21,8 +21,8 @@
     },
     {
       "identity" : "files",
-      "kind" : "localSourceControl",
-      "location" : "/Users/peter/Developer/Personal/Files",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/peterkovacs/files",
       "state" : {
         "branch" : "master",
         "revision" : "5f20560292f1d683e799dc201130b775668fa2c7"
@@ -30,8 +30,8 @@
     },
     {
       "identity" : "plot",
-      "kind" : "localSourceControl",
-      "location" : "/Users/peter/Developer/Personal/Plot",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/peterkovacs/plot",
       "state" : {
         "branch" : "swift-6",
         "revision" : "4084e7fe07cfd312824548969ec86ff5d1d03236"
